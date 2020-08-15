@@ -3,9 +3,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-export const AddCategory = ( {setCategories} ) => {
+export const AddCategory =  ( {setCategories} ) => {
     
-    const [inputValue, setInputValue] = useState('Hola mundo');
+    const [inputValue, setInputValue] = useState('');
     
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -17,7 +17,7 @@ export const AddCategory = ( {setCategories} ) => {
 
         if (inputValue.trim().length > 2) {
 
-            setCategories( cats => [...cats, inputValue]);
+            setCategories( cats => [ inputValue, ...cats]);
             setInputValue('');
 
         }
